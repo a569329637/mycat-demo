@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="userMapper">
+
+    <resultMap id="userResultMap" type="com.gsq.model.User">
+        <id property="id" column="id" />
+        <result property="userName" column="user_name" />
+        <result property="password" column="password" />
+    </resultMap>
+
+    <delete id="delUsers" >
+        delete from t_user;
+    </delete>
+
+    <insert id="addUser" parameterType="com.gsq.model.User">
+        insert into t_user(id, user_name, password) values(#{id}, #{userName}, #{password})
+    </insert>
+
+    <select id="getUser" parameterType="int" resultMap="userResultMap">
+        select * from t_user where id=#{id}
+    </select>
+
+    <select id="getUsers" resultMap="userResultMap">
+        select * from t_user
+    </select>
+
+    <!--<update id="modifyUser" parameterType="com.gsq.model.User">-->
+        <!--update t_user set user_name=#{userName}, password=#{password} where id=#{id}-->
+    <!--</update>-->
+</mapper>
