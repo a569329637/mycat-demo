@@ -18,6 +18,8 @@
         <mapper resource="mapping/userMapper.xml"/>
         <mapper resource="mapping/companyMapper.xml"/>
         <mapper resource="mapping/travelRecordMapper.xml"/>
+        <mapper resource="mapping/customerMapper.xml"/>
+        <mapper resource="mapping/orderMapper.xml"/>
     </mappers>
 
 </configuration>

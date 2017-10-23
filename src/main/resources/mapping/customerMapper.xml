@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="customerMapper">
+
+    <resultMap id="customerResultMap" type="com.gsq.model.Customer">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="address" column="address" />
+    </resultMap>
+
+    <delete id="delAll" >
+        delete from t_customer;
+    </delete>
+
+    <insert id="insert" parameterType="com.gsq.model.Customer">
+        insert into t_customer(id, name, address) values(#{id}, #{name}, #{address})
+    </insert>
+
+    <select id="getOne" parameterType="int" resultMap="customerResultMap">
+        select * from t_customer where id=#{id}
+    </select>
+
+    <select id="getAll" resultMap="customerResultMap">
+        select * from t_customer
+    </select>
+
+    <update id="update" parameterType="com.gsq.model.Customer">
+        update t_customer set name=#{name}, address=#{address} where id=#{id}
+    </update>
+</mapper>

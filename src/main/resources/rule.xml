@@ -25,7 +25,7 @@
 
 	<tableRule name="sharding-by-intfile">
 		<rule>
-			<columns>sharding_id</columns>
+			<columns>id</columns>
 			<algorithm>hash-int</algorithm>
 		</rule>
 	</tableRule>
@@ -39,6 +39,12 @@
 		<rule>
 			<columns>id</columns>
 			<algorithm>murmur</algorithm>
+		</rule>
+	</tableRule>
+	<tableRule name="mod-long">
+		<rule>
+			<columns>id</columns>
+			<algorithm>mod-long</algorithm>
 		</rule>
 	</tableRule>
 	<tableRule name="crc32slot">
@@ -91,6 +97,8 @@
 	<function name="hash-int"
 		class="io.mycat.route.function.PartitionByFileMap">
 		<property name="mapFile">partition-hash-int.txt</property>
+		<property name="type">0</property> <!-- 表示文件里的key是integer类型 -->
+		<property name="defaultNode">2</property>
 	</function>
 	<function name="rang-long"
 		class="io.mycat.route.function.AutoPartitionByLong">
