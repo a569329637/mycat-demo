@@ -1,3 +1,4 @@
+
 -- 创建数据库
 drop database if exists `mycat-demo1`;
 create database `mycat-demo1`;
@@ -9,6 +10,12 @@ create table t_user (
 	id int not null auto_increment primary key,
 	user_name varchar(20) not null,
 	password varchar(20) not null
+);
+drop table if exists t_company;
+create table t_company (
+	id int not null auto_increment primary key,
+	name varchar(20) not null,
+	address varchar(20) not null
 );
 
 -- 创建数据库
@@ -23,6 +30,11 @@ create table t_user (
 	user_name varchar(20) not null,
 	password varchar(20) not null
 );
+create table t_company (
+	id int not null auto_increment primary key,
+	name varchar(20) not null,
+	address varchar(20) not null
+);
 
 -- 创建数据库
 drop database if exists `mycat-demo3`;
@@ -36,4 +48,11 @@ create table t_user (
 	user_name varchar(20) not null,
 	password varchar(20) not null
 );
+create table t_company (
+	id int not null auto_increment primary key,
+	name varchar(20) not null,
+	address varchar(20) not null
+);
+
+
 
