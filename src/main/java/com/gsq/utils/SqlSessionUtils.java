@@ -11,11 +11,14 @@ import java.io.InputStream;
  */
 public class SqlSessionUtils {
 
-    private static String resource = "mybatis-conf.xml";
+    private static String resource = "database.xml";
+    private static SqlSessionFactory factory = null;
 
     public static SqlSessionFactory getSqlSessionFactory() {
-        InputStream is = SqlSessionUtils.class.getClassLoader().getResourceAsStream(resource);
-        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+        if (factory == null) {
+            InputStream is = SqlSessionUtils.class.getClassLoader().getResourceAsStream(resource);
+            factory = new SqlSessionFactoryBuilder().build(is);
+        }
         return factory;
     }
 

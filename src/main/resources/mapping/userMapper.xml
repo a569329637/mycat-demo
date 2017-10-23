@@ -25,7 +25,7 @@
         select * from t_user
     </select>
 
-    <!--<update id="modifyUser" parameterType="com.gsq.model.User">-->
-        <!--update t_user set user_name=#{userName}, password=#{password} where id=#{id}-->
-    <!--</update>-->
+    <update id="modifyUser" parameterType="com.gsq.model.User">
+        update t_user set user_name=#{userName}, password=#{password} where id=#{id}
+    </update>
 </mapper>

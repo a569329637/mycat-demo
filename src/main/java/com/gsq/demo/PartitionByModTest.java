@@ -38,10 +38,10 @@ public class PartitionByModTest {
         User user8 = (User) session.selectOne("userMapper.getUser", 4);
         System.out.println("user8 = " + user8);
 
-//        // 修改数据
-//        user4.setUserName("user5");
-//        user4.setPassword("pwd5");
-//        session.update("userMapper.modifyUser");
+        // 修改数据
+        user4.setUserName("user5");
+        user4.setPassword("pwd5");
+        session.update("userMapper.modifyUser", user4);
 
         // 查询所有数据
         List<User> user9 = (List<User>) session.selectList("userMapper.getUsers");

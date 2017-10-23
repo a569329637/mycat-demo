@@ -1,7 +1,7 @@
 -- 创建数据库
-drop database if exists mycat_demo1;
-create database mycat_demo1;
-use mycat_demo1;
+drop database if exists `mycat-demo1`;
+create database `mycat-demo1`;
+use `mycat-demo1`;
 
 -- 创建表
 drop table if exists t_user;
@@ -12,9 +12,9 @@ create table t_user (
 );
 
 -- 创建数据库
-drop database if exists mycat_demo2;
-create database mycat_demo2;
-use mycat_demo2;
+drop database if exists `mycat-demo2`;
+create database `mycat-demo2`;
+use `mycat-demo2`;
 
 -- 创建表
 drop table if exists t_user;
@@ -25,9 +25,9 @@ create table t_user (
 );
 
 -- 创建数据库
-drop database if exists mycat_demo3;
-create database mycat_demo3;
-use mycat_demo3;
+drop database if exists `mycat-demo3`;
+create database `mycat-demo3`;
+use `mycat-demo3`;
 
 -- 创建表
 drop table if exists t_user;

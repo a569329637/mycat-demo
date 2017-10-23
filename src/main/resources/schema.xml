@@ -24,14 +24,15 @@
 		-->
 		<!-- <table name="oc_call" primaryKey="ID" dataNode="dn1$0-743" rule="latest-month-calldate" /> -->
 
-		<table name="t_user" dataNode="dn1,dn2,dn3" primaryKey="id" rule="sharding-by-mod3"></table>
+		<table name="t_user" dataNode="mycat-demo-dn$1-3" primaryKey="id" rule="mod-long" />
 	</schema>
 
 
 	<!-- <dataNode name="dn1$0-743" dataHost="localhost1" database="db$0-743" /> -->
-	<dataNode name="dn1" dataHost="localhost1" database="mycat-demo-1" />
-	<dataNode name="dn2" dataHost="localhost1" database="mycat-demo-2" />
-	<dataNode name="dn3" dataHost="localhost1" database="mycat-demo-3" />
+	<!--<dataNode name="mycat-demo-dn$1-3" dataHost="localhost1" database="mycat-demo$1-3" />-->
+	<dataNode name="mycat-demo-dn1" dataHost="localhost1" database="mycat-demo1" />
+	<dataNode name="mycat-demo-dn2" dataHost="localhost1" database="mycat-demo2" />
+	<dataNode name="mycat-demo-dn3" dataHost="localhost1" database="mycat-demo3" />
 
 	<!--
 		<dataNode name="dn4" dataHost="sequoiadb1" database="SAMPLE" />

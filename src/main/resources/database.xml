@@ -7,7 +7,7 @@
             <!-- 配置数据库连接信息 -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:8066/mycat-demo" />
+                <property name="url" value="jdbc:mysql://127.0.0.1:8066/mycat-demo" />
                 <property name="username" value="root" />
                 <property name="password" value="123456" />
             </dataSource>
@@ -15,7 +15,7 @@
     </environments>
 
     <mappers>
-        <mapper resource="com.gsq.mapping.userMapper.xml"/>
+        <mapper resource="mapping/userMapper.xml"/>
     </mappers>
 
 </configuration>
