@@ -22,8 +22,10 @@ public class GlobalTableTest {
         }
 
         List<Company> list = sqlSession.selectList("companyMapper.getAll");
-        for (Company company : list) {
-            System.out.println("company = " + company);
+        if (list != null) {
+            for (Company company : list) {
+                System.out.println("company = " + company);
+            }
         }
     }
 }

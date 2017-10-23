@@ -45,8 +45,10 @@ public class PartitionByModTest {
 
         // 查询所有数据
         List<User> user9 = (List<User>) session.selectList("userMapper.getUsers");
-        for (User user : user9) {
-            System.out.println("user = " + user);
+        if (user9 != null) {
+            for (User user : user9) {
+                System.out.println("user = " + user);
+            }
         }
     }
 }

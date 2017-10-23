@@ -17,6 +17,11 @@ create table t_company (
 	name varchar(20) not null,
 	address varchar(20) not null
 );
+create table t_travel_record (
+	id int not null auto_increment primary key,
+	place_name varchar(20) not null,
+	travel_time timestamp not null
+);
 
 -- 创建数据库
 drop database if exists `mycat-demo2`;
@@ -35,6 +40,11 @@ create table t_company (
 	name varchar(20) not null,
 	address varchar(20) not null
 );
+create table t_travel_record (
+	id int not null auto_increment primary key,
+	place_name varchar(20) not null,
+	travel_time timestamp not null
+);
 
 -- 创建数据库
 drop database if exists `mycat-demo3`;
@@ -52,6 +62,11 @@ create table t_company (
 	id int not null auto_increment primary key,
 	name varchar(20) not null,
 	address varchar(20) not null
+);
+create table t_travel_record (
+	id int not null auto_increment primary key,
+	place_name varchar(20) not null,
+	travel_time timestamp not null
 );
 
 

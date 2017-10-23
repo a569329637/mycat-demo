@@ -17,6 +17,7 @@
     <mappers>
         <mapper resource="mapping/userMapper.xml"/>
         <mapper resource="mapping/companyMapper.xml"/>
+        <mapper resource="mapping/travelRecordMapper.xml"/>
     </mappers>
 
 </configuration>

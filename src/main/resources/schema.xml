@@ -24,7 +24,14 @@
 		-->
 		<!-- <table name="oc_call" primaryKey="ID" dataNode="dn1$0-743" rule="latest-month-calldate" /> -->
 
-		<table name="t_user" dataNode="mycat-demo-dn$1-3" primaryKey="id" rule="mod-long" />
+		<!-- 按照mod-long规则进行分表，其中dataNode是有顺序的,dn3是节点0,dn1是节点1,dn2是节点2 -->
+		<table name="t_user" dataNode="mycat-demo-dn3,mycat-demo-dn1,mycat-demo-dn2" primaryKey="id" rule="mod-long" />
+
+		<!-- 全局表，只在mycat-demo-dn$1-2数据库里 -->
+		<table name="t_company" primaryKey="id" type="global" dataNode="mycat-demo-dn$1-2" />
+
+		<!-- 按照auto-sharding-long规则进行分表 -->
+		<table name="t_travel_record" dataNode="mycat-demo-dn3,mycat-demo-dn$1-2" rule="auto-sharding-long" />
 	</schema>
 
 

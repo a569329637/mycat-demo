@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="travelRecordMapper">
+
+    <resultMap id="travelRecordResultMap" type="com.gsq.model.TravelRecord">
+        <id property="id" column="id" />
+        <result property="placeName" column="place_name" />
+        <result property="travelTime" column="travel_time" />
+    </resultMap>
+
+    <delete id="delAll" >
+        delete from t_travel_record;
+    </delete>
+
+    <insert id="insert" parameterType="com.gsq.model.TravelRecord">
+        insert into t_travel_record(id, place_name, travel_time) values(#{id}, #{placeName}, #{travelTime})
+    </insert>
+
+    <select id="getOne" parameterType="int" resultMap="travelRecordResultMap">
+        select * from t_travel_record where id=#{id}
+    </select>
+
+    <select id="getAll" resultMap="travelRecordResultMap">
+        select * from t_travel_record
+    </select>
+
+    <update id="update" parameterType="com.gsq.model.TravelRecord">
+        update t_travel_record set place_name=#{placeName}, travel_time=#{travelTime} where id=#{id}
+    </update>
+</mapper>
